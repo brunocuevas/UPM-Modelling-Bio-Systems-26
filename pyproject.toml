@@ -1,0 +1,33 @@
+[project]
+name = "upm-modelling-2026"
+version = "0.1.0"
+description = "Evolutionary SIR models (deleterious mutations, antigen escape) and phylodynamic tree visualization for UPM modelling 2026"
+readme = "README.md"
+authors = [
+    { name = "BrunoCuevas", email = "brunocuevaszuviria@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.0",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+]
+
+[project.optional-dependencies]
+dev = [
+    "jupyter>=1.0",
+    "ipykernel>=6.0",
+]
+
+[project.scripts]
+upm-modelling = "upm_modelling_2026.cli:main"
+upm-sir-deleterious = "upm_modelling_2026.cli:main_sir_deleterious"
+upm-sir-antigen = "upm_modelling_2026.cli:main_sir_antigen"
+upm-plot-tree-antigenic = "upm_modelling_2026.cli:main_plot_tree_antigenic"
+upm-plot-tree-netr = "upm_modelling_2026.cli:main_plot_tree_netr"
+
+[build-system]
+requires = ["uv_build>=0.11.1,<0.12.0"]
+build-backend = "uv_build"
